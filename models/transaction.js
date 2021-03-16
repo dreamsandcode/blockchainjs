@@ -26,8 +26,7 @@ HashTransaction.prototype.calculateHash = function calculateHash() {
   return hash ** 2;
 };
 
-HashTransaction.prototype = Object.create(Transaction.prototype);
-HashTransaction.prototype.constructor = HashTransaction;
+require("util").inherits(HashTransaction, Transaction);
 
 const tx = new HashTransaction(
   "dreamsandcode@gmail.com",
